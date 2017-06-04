@@ -1,6 +1,6 @@
 @relation dataset.18268.18500...
 @attribute tourney_id string
-@attribute tourney_name {'Australian Open','Canada Masters','Cincinnati Masters','Hamburg Masters','Houston','Indian Wells Masters','Madrid Masters','Miami Masters','Monte Carlo Masters','Paris Masters','Roland Garros','Rome Masters','Shanghai Masters','Stuttgart','Us Open','US Open','Wimbledon'}
+@attribute tourney_name {'Australian Open','Canada Masters','Cincinnati Masters','Hamburg Masters','Houston','Indian Wells Masters','Madrid Masters','Miami Masters','Monte Carlo Masters','Paris Masters','Roland Garros','Rome Masters','Shanghai Masters','Stuttgart','US Open','Wimbledon'}
 @attribute surface {'Carpet','Clay','Grass','Hard'}
 @attribute draw_size {'128','32','48','56','64','96'}
 @attribute tourney_level {'A','G','M'}

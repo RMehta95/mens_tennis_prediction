@@ -37,8 +37,8 @@ sapply(dataset,class) # find class of each column
 
 dataset <- dataset[-c(14203),]
 dataset$X <- NULL
-dataset$tourney_name <- as.factor(dataset$tourney_name)
 dataset$tourney_name[which(dataset$tourney_name=="Us Open")] <- "US Open"
+dataset$tourney_name <- as.factor(dataset$tourney_name)
 dataset$surface <- as.factor(dataset$surface)
 dataset$draw_size <- as.factor(dataset$draw_size)
 dataset$tourney_level <- as.factor(dataset$tourney_level)
