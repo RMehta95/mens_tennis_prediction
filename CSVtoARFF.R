@@ -43,7 +43,6 @@ dataset$surface <- as.factor(dataset$surface)
 dataset$draw_size <- as.factor(dataset$draw_size)
 dataset$tourney_level <- as.factor(dataset$tourney_level)
 dataset$tourney_date <- as.Date(dataset$tourney_date, "%Y%m%d")
-dataset$match_num <- NULL
 dataset$P1_id <- as.factor(dataset$P1_id)
 dataset$P2_id <- as.factor(dataset$P2_id)
 dataset$P1_name <- as.factor(dataset$P1_name)
@@ -93,11 +92,14 @@ for (i in 1:nrow(dataset)) {
 }
 
 playerNames <- union(unique(dataset$P1_id), unique(dataset$P2_id))
-dataset[playerNames] <- as.factor(NA)
+dataset[playerNames] <- 0
 for (i in 1:nrow(dataset)) {
   dataset[i,toString(dataset[i,"P1_id"])] <- 1
   dataset[i,toString(dataset[i,"P2_id"])] <- -1
 }
+
+dataset[playerNames] <- lapply(dataset[playerNames], factor)
+
 # Write the new files
 write.csv(x=dataset, file="dataset_modified_V3.csv")
 write.arff(x=dataset[1:18267,], file="train.arff")
