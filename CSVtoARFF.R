@@ -92,7 +92,13 @@ for (i in 1:nrow(dataset)) {
   }
 }
 
+playerNames <- union(unique(dataset$P1_id), unique(dataset$P2_id))
+dataset[playerNames] <- as.factor(NA)
+for (i in 1:nrow(dataset)) {
+  dataset[i,toString(dataset[i,"P1_id"])] <- 1
+  dataset[i,toString(dataset[i,"P2_id"])] <- -1
+}
 # Write the new files
-write.csv(x=dataset, file="dataset_modified_V2.csv")
+write.csv(x=dataset, file="dataset_modified_V3.csv")
 write.arff(x=dataset[1:18267,], file="train.arff")
 write.arff(x=dataset[18268:18500,], file="test.arff") # Use years 2015 & 2016 for testing
