@@ -75,6 +75,22 @@ dataset$p1wins <- as.factor(dataset$p1wins)
 dataset <- dataset[-which(is.na(dataset$P1_rank)),]
 dataset <- dataset[-which(is.na(dataset$P2_rank)),]
 
+dataset$p1vp2winpercentage <- 0.50
+dataset <- dataset[,c(1:22,24,23)]
+
+# H2H win percentage calculation (only on previous data)
+alldata = read.csv("./data/tennis_ATP/atp_consolidated.csv",header=TRUE, stringsAsFactors=FALSE)
+alldata$tourney_date <- as.Date(alldata$tourney_date, "%Y%m%d")
+
+for (i in 1:nrow(dataset)) {
+  numP1wins <- 0
+  numP1losses <- 0
+  numP1wins <- sum(alldata$winner_id == dataset[i,"P1_id"] & alldata$loser_id == dataset[i,"P2_id"] & alldata$tourney_date < dataset[i,"tourney_date"])
+  numP1losses <- sum(alldata$loser_id == dataset[i,"P1_id"] & alldata$winner_id == dataset[i,"P2_id"] & alldata$tourney_date < dataset[i,"tourney_date"])
+  if (numP1wins + numP1losses > 0) {
+    dataset[i, "p1vp2winpercentage"] <- numP1wins/(numP1wins+numP1losses)
+  }
+}
 
 # Write the new files
 write.csv(x=dataset, file="dataset_modified_V2.csv")
