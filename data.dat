@@ -1,0 +1,195 @@
+data;
+
+set STUD := AmarAgasaveeran	WilliamAntone	KahoArakawa	SteffanyBahamon	LillianneBecker	MarisaBhargava	ThomasCahill	FranciscoCastro	JonathanChan	AlexanderChase	AbishekChaturvedi	JimChen	ThomasCho	NicolayDahl	RauldelaRosa	MaryErikson	AliErsu	NathanielEzolino	ParthGoel	JiaGu	ZacharyGuritz	AbigailHofmeister	AlpHoroz	YueHu	JessicaHuber	JosephHugener	StephenHynes	VikasKethineedi	KyuLeem	EdwardLi	RachelLin	DarrenMalysa	RohanMehta	HarrisMiller	SheilaNesselbush	WanatipNirundonpruk	MichaelPauleen	BryanRichman	RyanRose	ZacharyRothschild	AlonSchneidman	BurakSekerci	AnthonySeverini	MatthewShipley	LaceySmith	KatherineSweetster	AndrewTang	ArkiraTanglertsumpun	LawrenceVinson	StevenWijaya	KevinXu	DixonYu;
+
+set PROJ := FEWSpirits	StartupWind	CerradoCoffee	LittleCompanyofMary	ChicagoCubs	MemorialHospitalIMRT	OpenEndedKaggleProject	ReDesignSeniorDesign	ChicagoTubeandIron	Abbvie	RVAWorks	BorgWarner	CenterforHealthcareStudies;
+
+set PREF := TEAM	PROJ;
+
+param max_team_size := 6;
+
+param min_team_size := 4;
+
+param min_projects := 3;
+
+param proj_points: FEWSpirits	StartupWind	CerradoCoffee	LittleCompanyofMary	ChicagoCubs	MemorialHospitalIMRT	OpenEndedKaggleProject	ReDesignSeniorDesign	ChicagoTubeandIron	Abbvie	RVAWorks	BorgWarner	CenterforHealthcareStudies :=
+AmarAgasaveeran	0	0	0	0	0	0	0	0	0	0	0	0	0
+WilliamAntone	0	0	0	0	0	0	0	0	0	0	0	0	0
+KahoArakawa	0	0	0	0	0	0	0	0	0	0	0	0	0
+SteffanyBahamon	0	0	0	0	0	0	0	0	0	0	0	0	0
+LillianneBecker	0	0	0	0	0	0	0	0	0	0	0	0	0
+MarisaBhargava	0	0	0	0	0	0	0	0	0	0	0	0	0
+ThomasCahill	0	0	0	0	0	0	0	0	0	0	0	0	0
+FranciscoCastro	0	0	0	0	0	0	0	0	0	0	0	0	0
+JonathanChan	0	0	0	0	0	0	0	0	0	0	0	0	0
+AlexanderChase	0	0	0	0	0	0	0	0	0	0	0	0	0
+AbishekChaturvedi	0	0	0	0	0	0	0	0	0	0	0	0	0
+JimChen	0	0	0	0	0	0	0	0	0	0	0	0	0
+ThomasCho	0	0	0	0	0	0	0	0	0	0	0	0	0
+NicolayDahl	0	0	0	0	0	0	0	0	0	0	0	0	0
+RauldelaRosa	0	0	0	0	0	0	0	0	0	0	0	0	0
+MaryErikson	0	0	0	0	0	0	0	0	0	0	0	0	0
+AliErsu	0	0	0	0	0	0	0	0	0	0	0	0	0
+NathanielEzolino	0	0	0	0	0	0	0	0	0	0	0	0	0
+ParthGoel	0	0	0	0	0	0	0	0	0	0	0	0	0
+JiaGu	0	0	0	0	0	0	0	0	0	0	0	0	0
+ZacharyGuritz	0	0	0	0	0	0	0	0	0	0	0	0	0
+AbigailHofmeister	0	0	0	0	0	0	0	0	0	0	0	0	0
+AlpHoroz	0	0	0	0	0	0	0	0	0	0	0	0	0
+YueHu	0	0	0	0	0	0	0	0	0	0	0	0	0
+JessicaHuber	0	0	0	0	0	0	0	0	0	0	0	0	0
+JosephHugener	0	0	0	0	0	0	0	0	0	0	0	0	0
+StephenHynes	0	0	0	0	0	0	0	0	0	0	0	0	0
+VikasKethineedi	0	0	0	0	0	0	0	0	0	0	0	0	0
+KyuLeem	0	0	0	0	0	0	0	0	0	0	0	0	0
+EdwardLi	0	0	0	0	0	0	0	0	0	0	0	0	0
+RachelLin	0	0	0	0	0	0	0	0	0	0	0	0	0
+DarrenMalysa	0	0	0	0	0	0	0	0	0	0	0	0	0
+RohanMehta	12	8	4	-20	16	0	0	20	0	0	0	0	0
+HarrisMiller	0	0	0	0	0	0	0	0	0	0	0	0	0
+SheilaNesselbush	0	0	0	0	0	0	0	0	0	0	0	0	0
+WanatipNirundonpruk	0	0	0	0	0	0	0	0	0	0	0	0	0
+MichaelPauleen	0	0	0	0	0	0	0	0	0	0	0	0	0
+BryanRichman	0	0	0	0	0	0	0	0	0	0	0	0	0
+RyanRose	0	0	0	0	0	0	0	0	0	0	0	0	0
+ZacharyRothschild	0	0	0	0	0	0	0	0	0	0	0	0	0
+AlonSchneidman	0	0	0	0	0	0	0	0	0	0	0	0	0
+BurakSekerci	0	0	0	0	0	0	0	0	0	0	0	0	0
+AnthonySeverini	0	0	0	0	0	0	0	0	0	0	0	0	0
+MatthewShipley	0	0	0	0	0	0	0	0	0	0	0	0	0
+LaceySmith	0	0	0	0	0	0	0	0	0	0	0	0	0
+KatherineSweetster	0	0	0	0	0	0	0	0	0	0	0	0	0
+AndrewTang	0	0	0	0	0	0	0	0	0	0	0	0	0
+ArkiraTanglertsumpun	0	0	0	0	0	0	0	0	0	0	0	0	0
+LawrenceVinson	0	0	0	0	0	0	0	0	0	0	0	0	0
+StevenWijaya	0	0	0	0	0	0	0	0	0	0	0	0	0
+KevinXu	0	0	0	0	0	0	0	0	0	0	0	0	0
+DixonYu	0	0	0	0	0	0	0	0	0	0	0	0	0
+;
+
+param stud_points: AmarAgasaveeran	WilliamAntone	KahoArakawa	SteffanyBahamon	LillianneBecker	MarisaBhargava	ThomasCahill	FranciscoCastro	JonathanChan	AlexanderChase	AbishekChaturvedi	JimChen	ThomasCho	NicolayDahl	RauldelaRosa	MaryErikson	AliErsu	NathanielEzolino	ParthGoel	JiaGu	ZacharyGuritz	AbigailHofmeister	AlpHoroz	YueHu	JessicaHuber	JosephHugener	StephenHynes	VikasKethineedi	KyuLeem	EdwardLi	RachelLin	DarrenMalysa	RohanMehta	HarrisMiller	SheilaNesselbush	WanatipNirundonpruk	MichaelPauleen	BryanRichman	RyanRose	ZacharyRothschild	AlonSchneidman	BurakSekerci	AnthonySeverini	MatthewShipley	LaceySmith	KatherineSweetster	AndrewTang	ArkiraTanglertsumpun	LawrenceVinson	StevenWijaya	KevinXu	DixonYu :=
+AmarAgasaveeran	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+WilliamAntone	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+KahoArakawa	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+SteffanyBahamon	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+LillianneBecker	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+MarisaBhargava	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ThomasCahill	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+FranciscoCastro	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+JonathanChan	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+AlexanderChase	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+AbishekChaturvedi	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+JimChen	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ThomasCho	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+NicolayDahl	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+RauldelaRosa	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+MaryErikson	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+AliErsu	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+NathanielEzolino	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ParthGoel	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+JiaGu	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ZacharyGuritz	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+AbigailHofmeister	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+AlpHoroz	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+YueHu	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+JessicaHuber	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+JosephHugener	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+StephenHynes	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+VikasKethineedi	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+KyuLeem	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+EdwardLi	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+RachelLin	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+DarrenMalysa	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+RohanMehta	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+HarrisMiller	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+SheilaNesselbush	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+WanatipNirundonpruk	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+MichaelPauleen	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+BryanRichman	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+RyanRose	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ZacharyRothschild	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+AlonSchneidman	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+BurakSekerci	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+AnthonySeverini	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+MatthewShipley	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+LaceySmith	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+KatherineSweetster	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+AndrewTang	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+ArkiraTanglertsumpun	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+LawrenceVinson	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+StevenWijaya	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+KevinXu	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+DixonYu	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+;
+
+param team_or_project: TEAM	PROJ :=
+AmarAgasaveeran	1.5	1.5
+WilliamAntone	1.5	1.5
+KahoArakawa	1.5	1.5
+SteffanyBahamon	1.5	1.5
+LillianneBecker	1.5	1.5
+MarisaBhargava	1.5	1.5
+ThomasCahill	1.5	1.5
+FranciscoCastro	1.5	1.5
+JonathanChan	1.5	1.5
+AlexanderChase	1.5	1.5
+AbishekChaturvedi	1.5	1.5
+JimChen	1.5	1.5
+ThomasCho	1.5	1.5
+NicolayDahl	1.5	1.5
+RauldelaRosa	1.5	1.5
+MaryErikson	1.5	1.5
+AliErsu	1.5	1.5
+NathanielEzolino	1.5	1.5
+ParthGoel	1.5	1.5
+JiaGu	1.5	1.5
+ZacharyGuritz	1.5	1.5
+AbigailHofmeister	1.5	1.5
+AlpHoroz	1.5	1.5
+YueHu	1.5	1.5
+JessicaHuber	1.5	1.5
+JosephHugener	1.5	1.5
+StephenHynes	1.5	1.5
+VikasKethineedi	1.5	1.5
+KyuLeem	1.5	1.5
+EdwardLi	1.5	1.5
+RachelLin	1.5	1.5
+DarrenMalysa	1.5	1.5
+RohanMehta	2	1
+HarrisMiller	1.5	1.5
+SheilaNesselbush	1.5	1.5
+WanatipNirundonpruk	1.5	1.5
+MichaelPauleen	1.5	1.5
+BryanRichman	1.5	1.5
+RyanRose	1.5	1.5
+ZacharyRothschild	1.5	1.5
+AlonSchneidman	1.5	1.5
+BurakSekerci	1.5	1.5
+AnthonySeverini	1.5	1.5
+MatthewShipley	1.5	1.5
+LaceySmith	1.5	1.5
+KatherineSweetster	1.5	1.5
+AndrewTang	1.5	1.5
+ArkiraTanglertsumpun	1.5	1.5
+LawrenceVinson	1.5	1.5
+StevenWijaya	1.5	1.5
+KevinXu	1.5	1.5
+DixonYu	1.5	1.5
+;
+
+param must_do_this_project:=
+FEWSpirits	0
+StartupWind	0
+CerradoCoffee	0
+LittleCompanyofMary	0
+ChicagoCubs	0
+MemorialHospitalIMRT	0
+OpenEndedKaggleProject	0
+ReDesignSeniorDesign	0
+ChicagoTubeandIron	0
+Abbvie	0
+RVAWorks	0
+BorgWarner	0
+CenterforHealthcareStudies	0
+;
+
