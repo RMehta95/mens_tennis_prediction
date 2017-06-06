@@ -100,7 +100,22 @@ for (i in 1:nrow(dataset)) {
 
 dataset[playerNames] <- lapply(dataset[playerNames], factor)
 
+# Creating log of ranking & ranking points differentials
+dataset$p1vp2LogRankDiff <- NA
+dataset$p1vp2LogRankPointsDiff <- NA
+
+for (i in 1:nrow(dataset)) {
+  dataset[i,"p1vp2LogRankDiff"] <- log(dataset[i,"P2_rank"]) - log(dataset[i,"P1_rank"]) # flipped order to keep it positive
+  dataset[i,"p1vp2LogRankPointsDiff"] <- log(dataset[i,"P1_rank_points"]) - log(dataset[i,"P2_rank_points"])
+}
+
+dataset$p1vp2LogRankDiff <- as.numeric(dataset$p1vp2LogRankDiff)
+dataset$p1vp2LogRankPointsDiff <- as.numeric(dataset$p1vp2LogRankPointsDiff)
+
+dataset2 <- dataset[ ,-which(names(dataset) %in% playerNames)]
+dataset2 <- dataset2[,c(1:23,25,26,24)]
+
 # Write the new files
-write.csv(x=dataset, file="dataset_modified_V3.csv")
-write.arff(x=dataset[1:18267,], file="train.arff")
-write.arff(x=dataset[18268:18500,], file="test.arff") # Use years 2015 & 2016 for testing
+write.csv(x=dataset2, file="dataset_modified_V5.csv")
+write.arff(x=dataset2[1:18267,], file="train_with_rank_points.arff")
+write.arff(x=dataset2[18268:18500,], file="test_with_rank_points.arff") # Use years 2015 & 2016 for testing
