@@ -114,8 +114,11 @@ dataset$p1vp2LogRankPointsDiff <- as.numeric(dataset$p1vp2LogRankPointsDiff)
 
 dataset2 <- dataset[ ,-which(names(dataset) %in% playerNames)]
 dataset2 <- dataset2[,c(1:23,25,26,24)]
+dataset2 <- dataset2[order(as.Date(dataset2$tourney_date, format="%Y%m%d")),]
+dataset <- dataset[order(as.Date(dataset$tourney_date, format="%Y%m%d")),]
+
 
 # Write the new files
-write.csv(x=dataset2, file="dataset_modified_V5.csv")
-write.arff(x=dataset2[1:18267,], file="train_with_rank_points.arff")
-write.arff(x=dataset2[18268:18500,], file="test_with_rank_points.arff") # Use years 2015 & 2016 for testing
+write.csv(x=dataset, file="dataset_modified_V4.csv")
+write.arff(x=dataset[1:16229,], file="train_with_embeddings_and_rank_points.arff")
+write.arff(x=dataset[16230:18500,], file="test_with_embeddings_and_rank_points.arff") # Use years 2015 onwards for testing
