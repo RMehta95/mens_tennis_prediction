@@ -117,6 +117,7 @@ dataset2 <- dataset2[,c(1:23,25,26,24)]
 dataset2 <- dataset2[order(as.Date(dataset2$tourney_date, format="%Y%m%d")),]
 dataset <- dataset[order(as.Date(dataset$tourney_date, format="%Y%m%d")),]
 
+write.csv(x=dataset2[16230:18500,], file="test_with_rank_points.csv")
 
 # Write the new files
 write.csv(x=dataset, file="dataset_modified_V4.csv")
